@@ -1,2 +1,23 @@
 # AbdulazizSanuri_Portfolio
-Personal portfolio website with my resume, projects, and contact info — built with HTML/CSS and hosted on GitHub Pages.
+
+## Live Site
+-> https://yourusername.github.io/portfolio/
+
+## Features
+- Resume (downloadable PDF)  
+- Project(s) showcase
+- Clean and responsive design
+
+## Built With
+- HTML5  
+- CSS3
+- GitHub Pages (for hosting)  
+
+## Preview
+(Add screenshot when website is done,)
+
+## 📬 Contact
+- **Email:** [abdulazizsanuri0@example.com](mailto:abdulazizsanuri0@gmail.com)  
+- **GitHub:** [@asanuri2005](https://github.com/asanuri2005)  
+- **LinkedIn:** [AbdulazizSanuri](https://www.linkedin.com/in/abdulaziz-sanuri-744009335)  
+
