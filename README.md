@@ -1,7 +1,7 @@
 # AbdulazizSanuri_Portfolio
 
 ## Live Site
--> https://asanuri2005.github.io/portfolio/
+-> [https://asanuri2005.github.io/portfolio/](https://asanuri2005.github.io/AbdulazizSanuri_Portfolio/)
 
 ## Features
 - Resume (downloadable PDF)  
