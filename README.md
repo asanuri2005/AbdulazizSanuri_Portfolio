@@ -1,7 +1,7 @@
 # AbdulazizSanuri_Portfolio
 
 ## Live Site
--> https://yourusername.github.io/portfolio/
+-> https://asanuri2005.github.io/portfolio/
 
 ## Features
 - Resume (downloadable PDF)  
