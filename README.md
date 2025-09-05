@@ -16,7 +16,7 @@
 ## Preview
 (Add screenshot when website is done,)
 
-## 📬 Contact
+## Contact
 - **Email:** [abdulazizsanuri0@gmail.com](mailto:abdulazizsanuri0@gmail.com)  
 - **GitHub:** [@asanuri2005](https://github.com/asanuri2005)  
 - **LinkedIn:** [AbdulazizSanuri](https://www.linkedin.com/in/abdulaziz-sanuri-744009335)  
