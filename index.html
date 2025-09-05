@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="CS student portfolio: projects, resume, and contact." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="#">YN</a>
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <img src="assets/headshot.jpg" alt="Headshot of Your Name" class="avatar" />
+    <div>
+      <h1>Hi, I’m Your Name — CS student & builder.</h1>
+      <p>I like backend systems, data, and clean UX. Here are a few things I’ve shipped.</p>
+      <p><a class="btn" href="#projects">See Projects</a>
+         <a class="btn outline" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume</a></p>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="grid">
+      <article class="card">
+        <h3><a href="https://github.com/youruser/repo1" target="_blank">Project One</a></h3>
+        <p>1–2 lines on what it does, your role, and tech.</p>
+        <ul class="tags"><li>Python</li><li>FastAPI</li><li>Postgres</li></ul>
+      </article>
+      <article class="card">
+        <h3><a href="https://your-demo.com" target="_blank">Project Two</a></h3>
+        <p>Problem → solution → impact.</p>
+        <ul class="tags"><li>React</li><li>Node</li><li>Docker</li></ul>
+      </article>
+      <article class="card">
+        <h3><a href="https://github.com/youruser/repo3" target="_blank">Project Three</a></h3>
+        <p>What you’d improve next (shows maturity).</p>
+        <ul class="tags"><li>Rust</li><li>WASM</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:you@email.com">you@email.com</a> ·
+       GitHub: <a href="https://github.com/youruser" target="_blank">@youruser</a> ·
+       LinkedIn: <a href="https://linkedin.com/in/yourhandle" target="_blank">yourhandle</a></p>
+  </section>
+</main>
+
+<footer class="footer">
+  <small>© <span id="year"></span> Your Name</small>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
