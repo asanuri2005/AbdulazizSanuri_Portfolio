@@ -78,15 +78,6 @@ a:focus-visible {
   color: hsl(var(--accent));      /* teal on hover/focus */
 }
 
-/* Stronger color for project titles */
-.card h3 a {
-  color: hsl(var(--primary));
-  font-weight: 700;
-}
-
-.card h3 a:hover {
-  color: hsl(var(--accent));         /* teal on hover */
-}
 
 /* =========================
    NAVBAR
