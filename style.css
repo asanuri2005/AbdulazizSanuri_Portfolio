@@ -1,55 +1,47 @@
-/* ===== Design tokens (edit these to reskin) ===== */
+/* ===== Theme tokens (tweak these) ===== */
 :root{
-  /* HSL so you can nudge hue/sat easily */
-  --bg: 222 16% 12%;
-  --surface: 222 20% 16%;
-  --text: 220 20% 94%;
-  --muted: 220 10% 70%;
-  --line: 220 12% 28%;
+  --bg: 232 18% 12%;
+  --surface: 232 18% 16%;
+  --text: 0 0% 98%;
+  --muted: 230 10% 70%;
+  --line: 230 14% 28%;
   --primary: 221 83% 60%;   /* blue */
   --secondary: 278 72% 65%; /* purple */
   --accent: 160 70% 58%;    /* teal */
   --radius: 12px;
-  --shadow: 0 6px 20px rgba(0,0,0,.25);
+  --shadow: 0 10px 30px rgba(0,0,0,.25);
   --max: 1040px;
   --pad: 16px;
-  --grad: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%);
+  --grad: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)) 55%, hsl(var(--accent)));
 }
-/* Auto light theme if user prefers */
 @media (prefers-color-scheme: light){
   :root{
     --bg: 0 0% 100%;
-    --surface: 220 20% 98%;
-    --text: 222 20% 12%;
-    --muted: 222 8% 40%;
-    --line: 222 15% 90%;
-    --shadow: 0 6px 18px rgba(0,0,0,.08);
+    --surface: 230 20% 97%;
+    --text: 232 12% 12%;
+    --muted: 232 10% 40%;
+    --line: 232 15% 88%;
+    --shadow: 0 8px 24px rgba(0,0,0,.08);
   }
 }
 
 /* ===== Base ===== */
 *{box-sizing:border-box}
-html,body{height:100%}
 body{
-  margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color:hsl(var(--text));
-  background:hsl(var(--bg));
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
+  margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:hsl(var(--text)); background:hsl(var(--bg)); line-height:1.65;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 }
-main{max-width:var(--max); margin:0 auto; padding:0 var(--pad) 72px;}
-h1{font-size:clamp(28px, 4vw, 40px); line-height:1.2; margin:0 0 6px;}
-h2{font-size:clamp(22px, 3vw, 28px); line-height:1.3; margin:0 0 12px;}
-p{margin:0 0 10px; color:hsl(var(--text));}
-small, .muted{color:hsl(var(--muted));}
+main{max-width:var(--max); margin:0 auto; padding:0 var(--pad) 80px;}
+h1{font-size:clamp(28px,4vw,40px); line-height:1.2; margin:0 0 8px;}
+h2{font-size:clamp(22px,3vw,28px); line-height:1.25; margin:0 0 14px;}
+p{margin:0 0 10px;} .muted{color:hsl(var(--muted));}
 
-/* ===== Nav ===== */
+/* ===== Nav with animated underline ===== */
 .nav{
   position:sticky; top:0; z-index:10;
-  display:flex; align-items:center; justify-content:space-between;
-  gap:12px; padding:12px var(--pad);
+  display:flex; justify-content:space-between; align-items:center; gap:12px;
+  padding:12px var(--pad);
   backdrop-filter:saturate(140%) blur(8px);
   background: color-mix(in oklab, hsl(var(--bg)) 85%, transparent);
   border-bottom:1px solid hsl(var(--line));
@@ -63,45 +55,39 @@ small, .muted{color:hsl(var(--muted));}
 }
 .nav a::after{
   content:""; position:absolute; left:0; bottom:-4px; height:2px; width:0;
-  background: var(--grad); transition:width .25s ease;
+  background: var(--grad); transition: width .22s ease;
 }
 .nav a:hover::after, .nav a:focus-visible::after{ width:100%; }
 
-/* ===== Hero ===== */
+/* ===== Hero / avatar ===== */
 .hero{
-  display:grid; grid-template-columns:120px 1fr; gap:22px; align-items:center; padding:40px 0 20px;
+  display:grid; grid-template-columns:120px 1fr; gap:22px; align-items:center; padding:42px 0 22px;
 }
 .avatar{
   width:120px; height:120px; border-radius:50%; object-fit:cover;
-  border:2px solid hsl(var(--line));
-  box-shadow: var(--shadow);
+  border:2px solid hsl(var(--line)); box-shadow: var(--shadow);
 }
 
-/* ===== Buttons ===== */
+/* ===== Buttons (gentle expand on hover) ===== */
 .btn{
-  display:inline-block; padding:11px 16px; border-radius:10px;
-  font-weight:700; text-decoration:none; color:white;
-  background:var(--grad); border:0; cursor:pointer;
-  box-shadow:0 8px 20px rgba(46,120,255,.25);
-  transform:translateZ(0); transition: transform .16s ease, box-shadow .2s ease, opacity .2s ease;
+  display:inline-block; padding:11px 16px; border-radius:10px; font-weight:700; cursor:pointer;
+  color:white; background:var(--grad); border:0; text-decoration:none;
+  box-shadow:0 10px 24px rgba(46,120,255,.25);
+  transform: translateZ(0) scale(1);
+  transition: transform .16s ease, box-shadow .2s ease, opacity .2s ease, border-color .2s ease;
 }
-.btn:hover{ transform: translateY(-2px) scale(1.02); box-shadow:0 12px 26px rgba(46,120,255,.32); }
+.btn:hover{ transform: translateY(-2px) scale(1.02); box-shadow:0 16px 32px rgba(46,120,255,.32); }
 .btn:active{ transform: translateY(0) scale(.99); }
 .btn.outline{
-  background:transparent; color:hsl(var(--text));
-  border:1px solid hsl(var(--line));
-  box-shadow:none;
+  background:transparent; color:hsl(var(--text)); border:1px solid hsl(var(--line)); box-shadow:none;
 }
 .btn.outline:hover{ border-color: hsl(var(--primary)); }
 
-/* ===== Sections & cards ===== */
+/* ===== Sections & project cards (lift on hover) ===== */
 .section{ margin-top:36px; }
-.section h2{
-  display:flex; align-items:center; gap:10px;
-}
+.section h2{ display:flex; align-items:center; gap:10px; }
 .section h2::before{
-  content:""; display:inline-block; width:10px; height:10px; border-radius:50%;
-  background: var(--grad);
+  content:""; width:10px; height:10px; border-radius:50%; background: var(--grad);
 }
 .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; }
 .card{
@@ -109,41 +95,24 @@ small, .muted{color:hsl(var(--muted));}
   border:1px solid hsl(var(--line));
   background: color-mix(in oklab, hsl(var(--surface)) 96%, transparent);
   box-shadow: 0 1px 0 rgba(0,0,0,.05);
-  transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;
+  transition: transform .16s ease, box-shadow .2s ease, border-color .2s ease;
 }
 .card:hover{ transform: translateY(-3px); box-shadow: var(--shadow); border-color: color-mix(in oklab, hsl(var(--primary)) 40%, hsl(var(--line))); }
 .card h3{ margin:0 0 6px; font-size:18px; }
-.card .tags{ margin-top:8px; display:flex; gap:8px; flex-wrap:wrap; }
-.tags span{
+.tags{ display:flex; gap:8px; flex-wrap:wrap; margin:8px 0 0; }
+.tag{
   font-size:12px; padding:4px 8px; border-radius:999px;
   border:1px solid hsl(var(--line)); color:hsl(var(--muted));
 }
-
-/* ===== Links with subtle underline animation ===== */
-a.inline{
-  color:hsl(var(--text)); text-decoration:none; background:
-    linear-gradient( to right, color-mix(in oklab, hsl(var(--primary)) 70%, hsl(var(--text))) , color-mix(in oklab, hsl(var(--secondary)) 70%, hsl(var(--text))) );
-  background-size:0% 2px; background-repeat:no-repeat; background-position:0 100%;
-  transition: background-size .25s ease;
-}
-a.inline:hover{ background-size:100% 2px; }
 
 /* ===== Skills list ===== */
 .skills{ display:grid; gap:8px; padding:0; list-style:none; }
 .skills li{ padding:10px 12px; border:1px solid hsl(var(--line)); border-radius:10px; }
 
-/* ===== Footer ===== */
+/* ===== Footer & accessibility ===== */
 .footer{ max-width:var(--max); margin:0 auto; padding:24px var(--pad); border-top:1px solid hsl(var(--line)); color:hsl(var(--muted)); }
-
-/* ===== Accessibility ===== */
 :focus-visible{ outline:3px solid hsl(var(--primary)); outline-offset:2px; border-radius:8px; }
 
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce){
-  *{ animation:none !important; transition:none !important; }
-}
-@media (max-width:680px){
-  .hero{ grid-template-columns:1fr; text-align:center; }
-  .avatar{ margin:0 auto; }
-  .nav a{ margin-left:12px; }
-}
+/* Motion safety */
+@media (prefers-reduced-motion: reduce){ *{transition:none !important; animation:none !important;} }
+@media (max-width:680px){ .hero{ grid-template-columns:1fr; text-align:center; } .avatar{ margin:0 auto; } .nav a{ margin-left:12px; } }
