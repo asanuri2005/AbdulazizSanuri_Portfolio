@@ -5,16 +5,13 @@
 
 ## Features
 - Resume (downloadable PDF)  
-- Project(s) showcase
+- Project(s)
 - Clean and responsive design
 
 ## Built With
-- HTML5  
-- CSS3
+- HTML  
+- CSS
 - GitHub Pages (for hosting)  
-
-## Preview
-(Add screenshot when website is done,)
 
 ## Contact
 - **Email:** [abdulazizsanuri0@gmail.com](mailto:abdulazizsanuri0@gmail.com)  
